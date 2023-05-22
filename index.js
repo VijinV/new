@@ -30,7 +30,7 @@ app.post("/", async (req, res) => {
 
 
 mongoose
-  .connect(proces.env.MONGO_URL)
+  .connect(process.env.MONGO_URL)
   .then(() => console.log("database connected"));
 
 app.listen(4000, () => console.log("The Server is  Running"));
