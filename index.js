@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => {
+app.get('https://api-test1-5a9d.onrender.com', (req, res) => {
     res.end("APi done")
 })
 
