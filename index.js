@@ -9,11 +9,11 @@ const cors = require('cors');
 
 app.use(cors());
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
 
-    const user1 = user.find()
+    const user1 = await user.find()
     
-    res.end(user1)
+    res.send(user1)
 })
 
 app.post('/', async (req, res) => {
