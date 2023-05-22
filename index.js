@@ -18,7 +18,7 @@ app.get('/', async (req, res) => {
 
 app.post('/', async (req, res) => {
 
-    const {name} = req.body
+    const name = req.body.name
 
     const user1 = new user({
         name: name
