@@ -26,7 +26,7 @@ app.post("/", async (req, res) => {
 
   await user1.save();
 
-  res.send(user1, "added successfully");
+  res.send(user1);
 });
 
 
