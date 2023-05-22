@@ -30,18 +30,6 @@ app.post('/', async (req, res) => {
 
 })
 
-const addUser = async (req, res) => {
-    const user1 = new user({
-        name: "Vijin"
-    })
-    await user1.save()
-    console.log("success",)
-}
-
-addUser()
-
-
-
 mongoose.connect("mongodb+srv://vfcvijin:111@new.j2g0m0h.mongodb.net/new").then(()=>console.log("database connected"))
 
 app.listen(4000,()=>console.log("The Server is  Running"));
