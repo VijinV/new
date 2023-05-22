@@ -27,7 +27,6 @@ app.post("/", async (req, res) => {
   res.end(user1, "added successfully");
 });
 
-    res.end(user1,"added successfully")
 
 
 mongoose
