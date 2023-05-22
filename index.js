@@ -1,35 +1,36 @@
-const express = require('express');
+const express = require("express");
 const app = express();
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+require("dotenv").config();
 
-const user = require("./modal")
+const user = require("./modal");
 
-
-const cors = require('cors');
+const cors = require("cors");
 
 app.use(cors());
 
-app.get('/', async (req, res) => {
+app.get("/", async (req, res) => {
+  const user1 = await user.find();
 
-    const user1 = await user.find()
-    
-    res.send(user1)
-})
+  res.send(user1);
+});
 
-app.post('/', async (req, res) => {
+app.post("/", async (req, res) => {
+  const name = req.body.name;
 
-    const name = req.body.name
+  const user1 = new user({
+    name: name,
+  });
 
-    const user1 = new user({
-        name: name
-    })
+  await user1.save();
 
-    await user1.save()
+  res.end(user1, "added successfully");
+});
 
-    res.end(user1,"added successfully")
 
-})
 
-mongoose.connect("mongodb+srv://vfcvijin:111@new.j2g0m0h.mongodb.net/new").then(()=>console.log("database connected"))
+mongoose
+  .connect(proces.env.MONGO_URL)
+  .then(() => console.log("database connected"));
 
-app.listen(4000,()=>console.log("The Server is  Running"));
+app.listen(4000, () => console.log("The Server is  Running"));
