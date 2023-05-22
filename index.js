@@ -6,6 +6,8 @@ require("dotenv").config();
 const user = require("./modal");
 
 const cors = require("cors");
+app.use(express.json());
+
 
 app.use(cors());
 
